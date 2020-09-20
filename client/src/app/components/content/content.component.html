@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <div class="card shadow">
+    <div class="card-header">
+      Add A New Content
+    </div>
+    <div class="card-body">
+      <select [(ngModel)]="selectedCategory">
+        <option *ngFor="let category of categories" [value]="category">{{category.name}}</option>
+      </select><br />
+      Title <input type="text" [(ngModel)]="title"><br />
+      Content <textarea type="text" [(ngModel)]="body"></textarea><br />
+      <input type="file"
+             id="file"
+             (change)="onFileInput($event.target.files[0])">
+    </div>
+    <div class="mt-2 border-top pt-2">
+      <!-- Likes: {{blog.likes}} Dislikes:{{blog.dislikes}} -->
+      <span class="btn btn-outline-success btn-sm mr-1" (click)="addNewContent(title, body, selectedCategory._id)">
+        <i class="fa fa-pencil-alt mr-1"></i>Add</span>
+    </div>
+  </div>
+</div>
+
+<!-- blog list -->
+<ul class="list-group shadow mt-3">
+  <li class="list-group-item" *ngFor="let content of contents">
+    <span class="text-dark">
+      <h5 class="mb-0">{{content.title}}</h5>
+    </span>
+    <p class="mb-0">{{content.body}}</p>
+    <span class="small text-muted">
+        Author: admin <br/>
+        Category: {{content.category[0] && content.category[0].name}}
+    </span>
+  </li>
+</ul>

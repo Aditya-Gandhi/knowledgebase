@@ -1,0 +1,7 @@
+{
+  "dbUrl": "mongodb://localhost:27017/",
+  "dbName": "knowledgebase",
+  "appPort": "3000",
+  "jwtExpiresIn": "24h",
+  "bucketName": "app-attachments"
+}

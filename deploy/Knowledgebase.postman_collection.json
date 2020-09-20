@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "4564f7d8-09a8-4c25-befb-adb892bdaa72",
+		"name": "Knowledgebase",
+		"description": "This collection contains all the api endpoints for knowledgebase application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"test\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/auth/signup",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						},
+						"description": "This Api will be used to sign up to the application"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"test\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Api to log into the knowledgebase application"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Content",
+			"item": [
+				{
+					"name": "GET All Content",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjY3NDIzMGEyOTY4NjUyMWJiZGRjNjMiLCJpYXQiOjE2MDA2MDI3MTMsImV4cCI6MTYwMDY4OTExM30.uIO5sUgwfclyboMBrKBp21qJjc59xAy8g_NfJ0dkXJ0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:3000/content/allcontent",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"content",
+								"allcontent"
+							]
+						},
+						"description": "To get all of the content from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Content",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjY3NDIzMGEyOTY4NjUyMWJiZGRjNjMiLCJpYXQiOjE2MDA2MDI3MTMsImV4cCI6MTYwMDY4OTExM30.uIO5sUgwfclyboMBrKBp21qJjc59xAy8g_NfJ0dkXJ0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "This title of the content",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "This is the body of the content",
+									"type": "text"
+								},
+								{
+									"key": "attachment",
+									"type": "file",
+									"src": "/home/aditya/Documents/ddsDataWithDeviceId.json"
+								},
+								{
+									"key": "categoryId",
+									"value": "5f670eb51f4aa4408db2d725",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:3000/content/addcontent",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"content",
+								"addcontent"
+							]
+						},
+						"description": "Add a new content to the database"
+					},
+					"response": []
+				}
+			],
+			"description": "This folder have all the api calls related to Content",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add New Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjY3NDIzMGEyOTY4NjUyMWJiZGRjNjMiLCJpYXQiOjE2MDA2MDI3MTMsImV4cCI6MTYwMDY4OTExM30.uIO5sUgwfclyboMBrKBp21qJjc59xAy8g_NfJ0dkXJ0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"testCategory\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/category/add",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"add"
+							]
+						},
+						"description": "Add a new category to the database"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjY3NDIzMGEyOTY4NjUyMWJiZGRjNjMiLCJpYXQiOjE2MDA2MDM3ODksImV4cCI6MTYwMDY5MDE4OX0.RctJv_CHnf2astH8W8qqJUEojRJBnbmXS6_bMRWUA1c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:3000/category/all",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

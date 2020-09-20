@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"knowledgebase.content"}],"uuid":"858fbf348a124815b7c7994010028d97"}
